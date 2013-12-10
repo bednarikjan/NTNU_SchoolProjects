@@ -1,0 +1,30 @@
+\section{Class diagram}
+
+Starting point for designing architecture was figure depicting basic structure of classes from assignment text. 
+Resulting architecture and class diagrams can be seen in figures \ref{fig:class_diagram1} and \ref{fig:class_diagram2}.
+
+Main class is a \texttt{ConstraintBasedLocalSearch} which is abstract and its main purpose is to handle solving of problem. 
+This includes holding current working state which is saved as a list of integers.
+More concrete but still abstract classes are \texttt{MinConflicts} and \texttt{SimulatedAnnealing} which implements function \texttt{solve} and holds some necessary instance variables. 
+Down-level classes of this hierarchy has only its own constructor where appropriate state manager is created.
+
+Although \texttt{ConstraintBasedLocalSearch} holds state, this is only raw data for it.
+It cannot interpret the meaning and there is why there are classes \texttt{*StateManager} who give semantics to the state.
+Abstract class  \texttt{LocalStateManager} defines interface that all state manager instances must share and also implements shared behavior. 
+Shared interface includes methods such as \texttt{evaluateState}, \texttt{getRandomNeighbour}, \texttt{printState} and more.  
+Three classes and \texttt{*StateManager} implement this interface.
+
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=20cm,angle=90]{img/classdiagram.png}
+	\caption{Class diagram depicting \texttt{ConstraintBasedLocalSearch} class and it's derived classes.}
+	\label{fig:class_diagram1}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+		\includegraphics[width=20cm,angle=90]{img/classdiagram2.png}
+	\caption{Class diagram depicting \texttt{LocalStateManager} class and it's derived classes.}
+	\label{fig:class_diagram2}
+\end{figure}

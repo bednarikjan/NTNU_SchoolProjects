@@ -1,0 +1,4 @@
+# git stuff
+*.pro.user
+*.o
+.classpath

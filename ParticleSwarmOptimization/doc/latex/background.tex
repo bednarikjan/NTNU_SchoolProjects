@@ -1,0 +1,22 @@
+\section{Background}
+The success rate of the standard Particle Swarm Optimization algorithm is mainly influenced by its parameters -- number of particles used, local attraction coefficient, global attraction coefficient to list the most important. Therefore it is crucial to choose the "right" values which would result in higher success rate. In the next paragraphs it will be explained why and which parameters were chosen for this project.
+
+\subsection{Parameters}
+
+\paragraph{Number of particles} Number of particles $N$ was chosen using following equation:
+
+\begin{equation}
+N = 10 + 2 \cdot \sqrt{D},
+\end{equation}
+
+where $D$ is dimension of the search space.
+
+\paragraph{Local and global attraction coefficient}
+It was empirically found that values close to $2.0$ give the best results. Given the limitations given by the assignment the value $1.999$ was chosen for both local and global attraction.
+
+\subsection{Fitness function}
+The core of the Particle Swarm Optimization is the fitness function. In most cases the objective of the algorithm is to minimize this function (while given the duality theorem it is also possible to maximize it in order to approximate the solution). It is relatively straightforward to solve the Circle problem as the search space has no local minimum (only one global).
+
+The Knapsack problem search space is however significantly more complex tricky and what is more it is not convex. Thus the particles might reach the "forbidden" positions and the fitness function must reflect this. This specific implementation uses the approach of so called "death penalty". This means the particle reaching the unwanted area receives the fitness function value of +INFINITY. 
+
+Thank to this approach the particles are able to discover very soon they should return to one of the allowed positions. The drawback of this approach is however the fact the particles might get stuck in local minimum.

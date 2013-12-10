@@ -1,0 +1,34 @@
+\section{Third puzzle description}
+As a third puzzle it was chosen \emph{round robin tournament} scheduling problem \footnote{http://en.wikipedia.org/wiki/Round-robin\_tournament}.
+Round robin tournament is a competition in which all contestants meet all other contestants in a match.
+
+Let $n$ be number of contestants and assume that there is an infinite (or sufficient) number of resources used for playing a match so there can be played whatever number of matches in parallel.
+ It can be shown \cite{art} that if $n$ is odd than there will be at least $n$ rounds needed to be played. 
+If $n$ is even than $n-1$ rounds are needed.
+(In matter of simplicity if $n$ is odd lets consider $n$ equals to $n + 1$ so new $n$ is even.)
+In each round, every contestant will play against another contestant and this contestant will be every round different.
+
+It is easy to generate candidate solution. 
+We will represent each contestant with unique number.
+Each row represents one round and we know, that in each row each number can occur only once.
+Example of randomly generated candidate solution for $n = 4$ can be seen below:
+\begin{center}
+$1-4\ 2-3$\\
+$4-2\ 1-3$\\
+$4-1\ 2-3$\\
+$1-2\ 3-4$\\
+\end{center}
+
+This candidate solution is not optimal because it does not meet all criteria of round robin tournament -- one contestant (e.g. 1) plays against other (4) multiple times.
+This will be accounted by evaluation function.
+
+Simple evaluation function (used in our application) is based on counting how many times a each contestant played against other contestants. This number is decreased by one and than all numbers are summed. In example above, result of evaluation function ($e(s)$) can be computed as below:
+$$e(s)  = h(s,1,2) + h(s,1,3) + h(s,1,4)  + h(s,2,3) + h(s,2,4) + h(s,3,4)$$
+where $h(s,a,b)$ is computed as follows. $h'(s,a,b)$ is number of how many times there is a match $a-b$ or $b-a$ in state $s$. 
+
+Scaling of this problem can be done by increasing or decreasing number of contestants.
+
+\subsection{Classic solution}
+It must be mentioned that this scheduling problem can be solved in $O(n)$ \cite{wiki}. 
+Since this fact, using general constraint based solver for this problem is inefficient.
+However this problem can be represented as a constrained-satisfaction, local-search problem.

@@ -1,0 +1,120 @@
+dodelat:
+    doku
+    upravit vypisy
+    komentare
+
+Classes
+=======
+
+Game
+-------
+Description:
+- Enables selection of playere/modes
+- Creates Board object
+- Creates Player object (2x)
+- Main game loop
+- Checks the state of the game
+
+Properties:
+- turn // whose turn is it, object pointer
+
+Methods:
+
+
+Board
+-------
+Description: 
+
+Properties:
+- Matrix // game matrix 4*4
+- Stock  // stock of pieces	
+- Chosen piece
+
+Methods:
+- show available pieces
+- select piece
+- place piece
+- show board
+- select square
+- get matrix	// returns the whole array (for minimax tree generation, checking, heuristics, ...)
+	
+	
+Player
+-------
+Description:
+
+Properties:
+- Mode 	// (human | random | novice | minimax)
+- Depth // (null | unsigned)
+
+Methods:
+- select piece
+- place piece
+
+
+Piece
+------
+Description:
+- object represents one of 16 pieces
+
+Properties:
+- type (short int - preferably 8 bits)
+
+Methods:
+- IsBlue
+- IsSquare
+- IsBig
+- IsSolid
+
+
+-------------------------------------------------------------------------------
+
+Notes:
+- potreba primy pristup k Matrix (2D pole?) - kvuli heuristikam, kontrole stavu
+
+    IPlayer: move(), choosePiece()
+        HumanPlayer
+        RandomPlayer
+        NovicePlayer
+        MinMaxPlayer
+
+    Piece: property1-4 or number
+
+    Game - calls move
+         - check game state
+        
+
+Spusti program napr:
+# ./quarto --random --novice
+
+Tim se vytvori instance Game.
+Game vytvori instanci Board.
+Board vytvori Matrix.
+Game vytvori instanci ***Player.
+Board vytvori 16 Pieces.
+Game bude vola
+
+    piece = player2->choosePiece()
+    while true
+        piece = player1->move(piece)
+        check()
+        piece = player2->move(piece)
+        check()
+
+Kazdy move() bude zasahovat do Board->stock a do Board->matrix.
+Board bude poskytovat rozhrani Board->choose(PieceEnum) a Board->place(PieceEnum, coords).
+
+move(Piece) se skládá ze dvou částí
+    playPiece() = 0
+    choosePiece() = 0
+----------------------------------
+CMD:
+--help
+--random -- random
+--random --novice (--minimax X, --remote PORT)
+(--headless)
+
+
+Q?
+=============
+- How to represent pieces? (object, enum, number, ...)?

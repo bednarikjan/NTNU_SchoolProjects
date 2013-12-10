@@ -1,0 +1,36 @@
+Each graph-color scenario is a text file describing the vertices and edges of a graph.  The
+format is as follows:
+
+Line 1:
+
+ NV  NE
+
+  NV = number of vertices
+  NE = number of edges
+
+Lines 2 to NV+1:
+
+ I X Y
+
+  I = index of the vertex
+  X,Y = cartesian coordinates of the vertex (since you will probably want to display the graph) - these may
+        be integers or reals.
+
+Lines NV+2 to NV+2+NE-1
+
+ I1 I2
+
+  I1 = index of the vertex on one end of the edge
+  I2 = index of the vertex on the other end of the edge
+
+Simple Example of a graph with 3 vertices connected in a triangle.
+
+3 3
+0 2.5 1.5
+1 4.0 4.0
+2 5.5 1.5
+0 1
+0 2
+1 2
+
+

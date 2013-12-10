@@ -1,0 +1,14 @@
+- zpracovani parametru			tom							OK						
+- board a piece					tom,hon						OK
+- vypis board a stock			hon							OK
+- kostra rizeni hry - Game		tom							OK
+- kontrola stavu hry							
+- player - move					tom							OK
+	- random					tom							OK
+	- novice					tom							OK
+	- minimax					hon
+		- alfa-beta strom
+		- hodnotici fce
+- vymyslet protokol				tom,hon,ostatni typci
+- implementovat sitovou hru		tom
+- psani doku (latex)			tom,hon

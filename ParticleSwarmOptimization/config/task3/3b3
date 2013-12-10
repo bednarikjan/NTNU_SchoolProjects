@@ -1,0 +1,12 @@
+problem              = knapsack
+dimension            = 2000
+max_iterations       = 500
+epsilon              = 0.001
+connections          = -1
+inertia_weight_start = 1.0
+inertia_weight_end   = 1.0
+c1 		     = 0.5
+c2                   = 1.5
+weight_limit         = 1000
+volume_limit         = -1
+knapsack_input_file  = ./knapsack/pso-packages.txt

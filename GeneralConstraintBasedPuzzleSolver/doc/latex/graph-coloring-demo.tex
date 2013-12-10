@@ -1,0 +1,27 @@
+\section{Graph Coloring results}
+
+\begin{table*}\centering
+	\ra{1.3}
+    \caption{}
+    \label{tab:graphcoloring}
+	\vspace{2mm}
+	\begin{tabular}{llllll}
+		\toprule[2.0px]
+			\multirow{2}{*}{Method} & 
+			\multirow{2}{*}{Queens} & 
+			\multicolumn{2}{c}{Evaluation} 	& 
+			\multicolumn{2}{c}{Number of steps}\\
+			   &          & Average & Best & Average & Quickest \\ 
+		\midrule
+		\multirow{3}{*}{Simulated Annealing} 
+			& graph-color-2.txt & 0.0 $\pm$ 0.0 & 0.0 & 23067.20 $\pm$ 1287.33 & 18348\\ % 5000 runs
+			& graph-color-1.txt & 0.0 $\pm$ 0.0 & 0.0 & 29934.35 $\pm$ 1148.66 & 26455\\ % 5000 runs
+			& graph-color-3.txt & 0.0 $\pm$ 0.0 & 0.0 & 46111.65 $\pm$ 696.28 & 44625 \\ % 5000 runs
+		\midrule
+		\multirow{3}{*}{Minimum Conflicts}
+			& graph-color-2.txt & 0.0 $\pm$ 0.0 & 0.0 & 9.05 $\pm$ 1.07 & 6\\ % 5000 runs
+			& graph-color-1.txt & 0.0 $\pm$ 0.0 & 0.0 & 27.00 $\pm$ 2.30 & 22\\ % 5000 runs
+			& graph-color-3.txt & 0.0 $\pm$ 0.0 & 0.0 & 484.80 $\pm$ 17.30 & 437 \\ % 5000 runs			
+		\bottomrule[2.0px]
+	\end{tabular}
+\end{table*}

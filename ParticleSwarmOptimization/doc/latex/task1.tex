@@ -1,0 +1,31 @@
+\section{The circle problem}
+
+This task is devoted to solving the Circle problem in the both one and two dimensional 
+search spaces. The main objective was to obtain the fitness function value smaller than $0.001$.
+
+The table \ref{tab:circle_1D_2D} shows the number of steps needed to achieve this goal in 10 different (independent) runs of both 1D and 2D circle problem. It can be noted that in most cases the 2D circle problem requires significantly more steps to be solved.
+
+\begin{table*}[htb]
+	\begin{center}
+	\caption{Circle problem 1D and 2D -- 10 runs.}
+	\label{tab:circle_1D_2D}
+	\def\arraystretch{1.3}
+		\begin{tabular}{ c c c }
+		\toprule[0.5mm]
+		& \multicolumn{2}{ c }{\textbf{Steps}} \\
+		\textbf{\#} & \textbf{1D} & \textbf{2D}\\
+		\midrule
+				1  & 17 & 72 \\
+				2  & 7 & 67 \\
+				3  & 6 & 59 \\
+				4  & 30 & 78 \\
+				5  & 25 & 35 \\
+				6  & 18 & 59 \\
+				7  & 30 & 79 \\
+				8  & 42 & 69 \\
+				9  & 14 & 74 \\
+				10 & 26 & 58 \\
+		\bottomrule[0.5mm]
+		\end{tabular}
+	\end{center}
+\end{table*}
